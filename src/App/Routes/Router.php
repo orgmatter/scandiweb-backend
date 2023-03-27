@@ -66,7 +66,7 @@ class Router {
         }elseif($requestTypeSmallCaps === "post") {
 
             $postData = [
-                "name" => $requestData->name,
+                "name" => ucwords($requestData->name),
                 "price" => $requestData->price,
                 "sku" => $requestData->sku,
                 "productType" => $requestData->productType,

@@ -4,11 +4,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\Controllers\\" : "src/",
-            "App\\Database\\Migrations\\" : "src/",
-            "App\\Routes\\" : "src/",
-            "App\\Routes\\Traits\\" : "src/",
-            "App\\Services\\" : "src/"
+            "App\\Controllers\\" : "src/App/Controllers/",
+            "App\\Database\\Migrations\\" : "src/App/Database/Migrations/",
+            "App\\Database\\Models\\" : "src/App/Database/Models/",
+            "App\\Routes\\" : "src/App/Routes/",
+            "App\\Routes\\Traits\\" : "src/App/Routes/Traits/",
+            "App\\Services\\" : "src/App/Services/"
         }
     }
 }
