@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Database\Models\Product;
 
-require_once('/Users/user/Desktop/scandiweb-test/scandiweb-backend/App/Database/config.php');
+require_once('/Users/user/Desktop/scandiweb-test/scandiweb-backend/src/App/Database/config.php');
 
 
 class ProductService {
