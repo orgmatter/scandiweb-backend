@@ -1,5 +1,5 @@
 {
-    "require": {
+    "require-dev": {
         "illuminate/database": "^10.1"
     },
     "autoload": {
