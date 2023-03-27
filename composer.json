@@ -1,6 +1,13 @@
 {
     "require": {
-        "illuminate/database": "^10.1"
+        "illuminate/database": "^10.1",
+        "symfony/finder": "^6.2",
+        "doctrine/dbal": "^3.5.1",
+        "fakerphp/faker": "^1.21",
+        "illuminate/console": "^10.0",
+        "illuminate/events": "^10.0",
+        "illuminate/filesystem": "^10.0",
+        "illuminate/pagination": "^10.0"
     },
     "autoload": {
 
