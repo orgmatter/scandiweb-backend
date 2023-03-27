@@ -35,18 +35,19 @@ class Router {
 
     public function direct($requestUri, $requestType, $requestData, $id = null)
     {
+        if($requestType === "OPTIONS") {
+            return;
+        }
         if(!array_key_exists($requestUri, $this->routes[$requestType])) {
 
-            throw new Exception("nkjgjhfhfh");
+            throw new Exception("the request url {$requestUri} does not exit");
 
         }
-
-        // get my request action in the request action finder array
 
         $requestTypeSmallCaps = strtolower($requestType);
 
         
-
+        // get my request action in the request-action-finder array
         if(($requestTypeSmallCaps === "get") && isset($_GET['field']) && isset($_GET['value'])) {
 
             $requestValidateAction = $this->requestActionFinder["{$requestTypeSmallCaps}-validate-{$requestUri}"];
@@ -72,9 +73,13 @@ class Router {
                 "attributes" => $requestData->attributes
             ];
 
+            $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
+
             $this->productController->$requestAction($postData);
 
         }elseif($requestTypeSmallCaps === "delete") {
+
+            $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
 
             $this->productController->$requestAction($requestData);
         }
