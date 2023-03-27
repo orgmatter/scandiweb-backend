@@ -11,6 +11,7 @@ Capsule::schema()->create('products', function ($table) {
     $table->string('name');
     $table->string('price');
     $table->string('sku')->unique();
+    $table->string('productType');
     $table->json('attributes');
     $table->timestamps();
     $table->softDeletes();
