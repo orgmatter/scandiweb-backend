@@ -8,7 +8,7 @@ trait RequestHandlers {
 
     public function productService() 
     {
-        return new ProductService;
+        return new ProductService();
     }
 
 
