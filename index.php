@@ -1,5 +1,9 @@
 <?php 
 
+use App\Routes\Request;
+
+require "vendor/autoload.php";
+
 header('Access-Control-Allow-Origin: *');
 
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS');
@@ -10,11 +14,7 @@ header('Access-Control-Max-Age: 1728000');
 
 header("Content-Type: application/json; charset=UTF-8");
 
-
-
-use App\Routes\Request;
-
-require "vendor/autoload.php";
+echo "checking the api";
 
 $app = require './bootstrap.php';
 
