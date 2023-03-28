@@ -6,13 +6,15 @@ namespace App\Services;
 
 // require_once('/Users/user/Desktop/scandiweb-test/scandiweb-backend/src/App/Database/config.php');
 
+echo json_encode([
+    "status" => "checking again"
+]);
+
 class ProductService {
 
     public function __construct($var = null)
     {
-        echo json_encode([
-            "status" => "checking again"
-        ]);
+        
     }
 
     // public function getProducts()
