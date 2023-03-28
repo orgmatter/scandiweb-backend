@@ -4,7 +4,7 @@ use App\Routes\Request;
 
 require "vendor/autoload.php";
 
-header('Access-Control-Allow-Origin: https://scandiweb-product-client.herokuapp.com, *');
+header('Access-Control-Allow-Origin: https://scandiweb-product-client.herokuapp.com/api/v1/products, *');
 
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS');
 
