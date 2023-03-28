@@ -14,12 +14,11 @@ trait RequestHandlers {
 
     public function getProducts() 
     { 
-        echo json_encode([
-            "status" => "checking"
-        ]);
         $products = $this->productService()->getProducts();
 
-        return $this->productService()->toJson($products);
+        echo json_encode($products);
+
+        // return $this->productService()->toJson($products);
     }
 
 
