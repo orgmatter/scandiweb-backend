@@ -14,9 +14,14 @@ trait RequestHandlers {
 
     public function getProducts() 
     { 
-        $products = $this->productService()->getProducts();
 
-        return $this->productService()->toJson($products);
+        try {
+            $products = $this->productService()->getProducts();
+            return $this->productService()->toJson($products);
+        
+        }catch(Exception $ex) {
+            echo $ex->getMessage();
+        }
     }
 
 
