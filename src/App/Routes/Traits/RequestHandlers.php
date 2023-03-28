@@ -8,7 +8,7 @@ trait RequestHandlers {
 
     public function productService() 
     {
-        return new ProductService();
+        return new ProductService;
     }
 
 
@@ -16,10 +16,8 @@ trait RequestHandlers {
     { 
         
         try {
-            // $products = $this->productService()->getProducts();
-            return $this->productService()->toJson([
-                "status" => "checking try catch again"
-            ]);
+            $products = $this->productService()->getProducts();
+            return $this->productService()->toJson($products);
         
         }catch(Error $ex) {
             echo $ex->getMessage();
