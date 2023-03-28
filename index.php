@@ -6,6 +6,9 @@ require "vendor/autoload.php";
 
 header('Access-Control-Allow-Origin: *');
 
+if(Request::method() === "OPTIONS") {
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS');
+}
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS');
 
 header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept, Origin, Authorization');
