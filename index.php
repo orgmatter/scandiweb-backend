@@ -14,7 +14,7 @@ header('Access-Control-Max-Age: 1728000');
 
 header("Content-Type: application/json; charset=UTF-8");
 
-echo $_SERVER['REQUEST_URI'];
+echo Request::uri();
 
 $app = require './bootstrap.php';
 
