@@ -16,9 +16,7 @@ trait RequestHandlers {
     { 
         $products = $this->productService()->getProducts();
 
-        echo json_encode($products);
-
-        // return $this->productService()->toJson($products);
+        return $this->productService()->toJson($products);
     }
 
 

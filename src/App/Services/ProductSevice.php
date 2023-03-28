@@ -11,7 +11,9 @@ class ProductService {
 
     public function __construct($var = null)
     {
-
+        echo json_encode([
+            "status" => "checking again"
+        ]);
     }
 
     public function getProducts()
