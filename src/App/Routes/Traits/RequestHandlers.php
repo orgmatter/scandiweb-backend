@@ -17,9 +17,9 @@ trait RequestHandlers {
         
         try {
             // $products = $this->productService()->getProducts();
-            // return $this->productService()->toJson($products);
-
-            echo "trying the catch function";
+            return $this->productService()->toJson([
+                "status" => "checking try catch again"
+            ]);
         
         }catch(Error $ex) {
             echo $ex->getMessage();
