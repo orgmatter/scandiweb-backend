@@ -35,8 +35,7 @@ class Router {
 
     public function direct($requestUri, $requestType, $requestData, $id = null)
     {
-        echo $requestUri;
-        
+
         if($requestType === "OPTIONS") {
             return;
         }

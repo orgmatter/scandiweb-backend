@@ -16,20 +16,26 @@ class ProductService {
 
     public function getProducts()
     {
-        if(!$products = Product::all()) {
+        // if(!$products = Product::all()) {
 
-            return [
-                "status" => "error",
-                "msg" => "Product cannot be fetched",
-                "data" => []
-            ];
-        }
-        $products = Product::all();
+        //     return [
+        //         "status" => "error",
+        //         "msg" => "Product cannot be fetched",
+        //         "data" => []
+        //     ];
+        // }
+        // $products = Product::all();
+
+        // return [
+        //     "status" => "success",
+        //     "msg" => "Product fetched",
+        //     "data" => $products
+        // ];
 
         return [
-            "status" => "success",
-            "msg" => "Product fetched",
-            "data" => $products
+            "status" => "error",
+            "msg" => "Product cannot be fetched",
+            "data" => []
         ];
     }
 
