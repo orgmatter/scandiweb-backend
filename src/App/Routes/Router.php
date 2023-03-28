@@ -62,8 +62,6 @@ class Router {
 
             $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
 
-            echo $requestAction;
-
             $this->productController->$requestAction();
         
         }elseif($requestTypeSmallCaps === "post") {
