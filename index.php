@@ -1,8 +1,14 @@
 <?php 
 
-header("Cache-Control: no-cache, must-revalidate");
-
-header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
+    header('Access-Control-Allow-Headers: token, Content-Type');
+    header('Access-Control-Max-Age: 1728000');
+    header('Content-Length: 0');
+    header('Content-Type: text/plain');
+    die();
+}
 
 header('Access-Control-Allow-Origin: *');
 
@@ -10,7 +16,11 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS');
 
 header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept, Origin, Authorization');
 
+header('Access-Control-Max-Age: 1728000');
+
 header("Content-Type: application/json; charset=UTF-8");
+
+
 
 use App\Routes\Request;
 
@@ -26,15 +36,6 @@ $load = $app["load"];
 $load->direct(Request::uri(), Request::method(), Request::data(), Request::isID());
 
 
-// if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-//     header('Access-Control-Allow-Origin: *');
-//     header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
-//     header('Access-Control-Allow-Headers: token, Content-Type');
-//     header('Access-Control-Max-Age: 1728000');
-//     header('Content-Length: 0');
-//     header('Content-Type: text/plain');
-//     die();
-// }
+// header("Cache-Control: no-cache, must-revalidate");
 
-// header('Access-Control-Allow-Origin: *');
-// header('Content-Type: application/json');
+// header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
