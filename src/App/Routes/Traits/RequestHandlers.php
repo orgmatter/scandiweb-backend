@@ -19,7 +19,7 @@ trait RequestHandlers {
             $products = $this->productService()->getProducts();
             return $this->productService()->toJson($products);
         
-        }catch(Exception $ex) {
+        }catch(\Exception $ex) {
             echo $ex->getMessage();
         }
     }
