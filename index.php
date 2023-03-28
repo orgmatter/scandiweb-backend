@@ -34,8 +34,3 @@ $load = $app["load"];
 
 // directing my route to fetch my controller
 $load->direct(Request::uri(), Request::method(), Request::data(), Request::isID());
-
-
-// header("Cache-Control: no-cache, must-revalidate");
-
-// header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
