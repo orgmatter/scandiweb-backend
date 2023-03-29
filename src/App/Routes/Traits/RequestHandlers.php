@@ -17,11 +17,11 @@ trait RequestHandlers {
         try {
             // $products = $this->productService()->getProducts();
             // $productService = new ProductService;
-            // return $productService->toJson([
-            //     "status" => "array to json"
-            // ]);
+            return $productService->toJson([
+                "status" => "array to json"
+            ]);
 
-            echo $_SERVER['DOCUMENT_ROOT'];
+            // echo $_SERVER['DOCUMENT_ROOT'];
         
         }catch(Error $ex) {
             echo $ex->getMessage();
