@@ -76,8 +76,6 @@ class Router {
 
             $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
 
-            echo $requestData->price;
-
             $this->productController->$requestAction($postData);
 
         }elseif($requestTypeSmallCaps === "delete") {
