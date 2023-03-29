@@ -19,7 +19,8 @@ trait RequestHandlers {
         try {
             // $products = $this->productService()->getProducts();
             $products = Product::all();
-            return $this->productService()->toJson($products);
+            echo $products;
+            // return $this->productService()->toJson($products);
         
         }catch(Exception $ex) {
             echo $ex->getMessage();
