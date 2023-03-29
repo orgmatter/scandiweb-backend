@@ -21,7 +21,7 @@ trait RequestHandlers {
             //     "status" => "array to json"
             // ]);
 
-            echo ProductService::class;
+            echo $_SERVER['DOCUMENT_ROOT'];
         
         }catch(Error $ex) {
             echo $ex->getMessage();
