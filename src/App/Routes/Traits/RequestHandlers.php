@@ -4,8 +4,6 @@ namespace App\Routes\Traits;
 
 use App\Services\ProductService;
 
-use App\Database\Models\Product;
-
 trait RequestHandlers {
 
     public function productService() 
