@@ -74,9 +74,9 @@ class Router {
                 "attributes" => $requestData->attributes
             ];
 
-            echo $requestData->price;
-
             $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
+
+            echo $requestData->price;
 
             $this->productController->$requestAction($postData);
 
