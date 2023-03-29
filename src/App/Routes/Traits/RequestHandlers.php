@@ -15,15 +15,10 @@ trait RequestHandlers {
     public function getProducts() 
     { 
         try {
-            // $products = $this->productService()->getProducts();
-            $productService = new ProductService;
-            return $productService->toJson([
-                "status" => "array to json"
-            ]);
-
-            // echo $_SERVER['DOCUMENT_ROOT'];
+            $products = $this->productService()->getProducts();
+            return $this->productService()->toJson($product);
         
-        }catch(Error $ex) {
+        }catch(Exception $ex) {
             echo $ex->getMessage();
         }
     }
