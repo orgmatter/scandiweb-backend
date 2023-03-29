@@ -19,7 +19,7 @@ trait RequestHandlers {
         try {
             // $products = $this->productService()->getProducts();
             $products = Product::all();
-            echo $products;
+            var_dump($products);
             // return $this->productService()->toJson($products);
         
         }catch(Exception $ex) {
