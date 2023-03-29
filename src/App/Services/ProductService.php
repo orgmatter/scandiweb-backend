@@ -34,6 +34,7 @@ class ProductService {
 
     public function addProduct($data)
     {
+        var_dump($data);
         if(!$product = Product::create($data)) {
             
             return [
