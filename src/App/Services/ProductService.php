@@ -16,20 +16,20 @@ class ProductService {
 
     public function getProducts()
     {
-        if(!$products = Product::all()) {
-
+        try {
+            $products = Product::all();
+            return [
+                "status" => "success",
+                "msg" => "Product fetched",
+                "data" => $products
+            ];
+        }catch(\Exception $ex) {
             return [
                 "status" => "error",
-                "msg" => "Product cannot be fetched",
+                "msg" => "Unable to fetch product {$ex->getMessage()}",
                 "data" => []
             ];
         }
-
-        return [
-            "status" => "success",
-            "msg" => "Product fetched",
-            "data" => $products
-        ];
     }
 
     public function addProduct($data)
@@ -42,40 +42,30 @@ class ProductService {
                 "data" => $product
             ];
         }catch(\Exception $ex) {
-            echo "unable to create data {$ex->getMessage()}";
+            return [
+                "status" => "error",
+                "msg" => "Product cannot be saved {$ex->getMessage()}",
+                "data" => []
+            ];
         }
-        // if(!$product = Product::create($data)) {
-            
-        //     return [
-        //         "status" => "error",
-        //         "msg" => "Product cannot be saved",
-        //         "data" => []
-        //     ];
-        // }
-
-        // return [
-        //     "status" => "success",
-        //     "msg" => "Product saved",
-        //     "data" => $product
-        // ];
     }
 
     public function deleteProducts($data)
     {
-        if(!$product = Product::destroy($data)) {
-
+        try {
+            $product = Product::destroy($data);
+            return [
+                "status" => "success",
+                "msg" => "Product deleted",
+                "data" => $product
+            ];
+        }catch(\Exception $ex) {
             return [
                 "status" => "error",
-                "msg" => "Product cannot be deleted",
+                "msg" => "Product cannot be deleted {$ex->getMessage()}",
                 "data" => []
             ];
         }
-
-        return [
-            "status" => "success",
-            "msg" => "Product deleted",
-            "data" => $product
-        ];
     }
 
     public function validate($field, $value)
