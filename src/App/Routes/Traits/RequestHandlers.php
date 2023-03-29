@@ -4,6 +4,8 @@ namespace App\Routes\Traits;
 
 use App\Services\ProductService;
 
+use App\Database\Models\Product;
+
 trait RequestHandlers {
 
     public function productService() 
@@ -15,7 +17,8 @@ trait RequestHandlers {
     public function getProducts() 
     { 
         try {
-            $products = $this->productService()->getProducts();
+            // $products = $this->productService()->getProducts();
+            $products = Product::all();
             return $this->productService()->toJson($products);
         
         }catch(Exception $ex) {
