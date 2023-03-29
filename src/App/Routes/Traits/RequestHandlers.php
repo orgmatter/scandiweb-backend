@@ -16,7 +16,7 @@ trait RequestHandlers {
     { 
         try {
             // $products = $this->productService()->getProducts();
-            // $productService = new ProductService;
+            $productService = new ProductService;
             return $productService->toJson([
                 "status" => "array to json"
             ]);
