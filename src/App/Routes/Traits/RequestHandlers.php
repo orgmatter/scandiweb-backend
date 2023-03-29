@@ -17,12 +17,10 @@ trait RequestHandlers {
     public function getProducts() 
     { 
         try {
-            // $products = $this->productService()->getProducts();
-            $products = Product::all();
-            var_dump($products);
-            // return $this->productService()->toJson($products);
+            $products = $this->productService()->getProducts();
+            return $this->productService()->toJson($products);
         
-        }catch(Exception $ex) {
+        }catch(\Exception $ex) {
             echo $ex->getMessage();
         }
     }
