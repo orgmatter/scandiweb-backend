@@ -28,7 +28,7 @@ trait RequestHandlers {
     {
         $product = $this->productService()->addProduct($data);
 
-        echo $product;
+        var_dump($data);
 
         // return $this->productService()->toJson($product);
     }
