@@ -26,9 +26,10 @@ trait RequestHandlers {
 
     public function addProduct($data) 
     {
+        var_dump($data);
         $product = $this->productService()->addProduct($data);
 
-        var_dump($data);
+        // var_dump($data);
 
         // return $this->productService()->toJson($product);
     }
