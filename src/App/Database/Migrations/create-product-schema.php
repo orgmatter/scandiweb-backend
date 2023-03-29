@@ -19,4 +19,4 @@ require_once($rootPath.'/src/App/Database/config.php');
 //     $table->softDeletes();
 // });
 
-echo Capsule::class;
+echo Capsule::schema();
