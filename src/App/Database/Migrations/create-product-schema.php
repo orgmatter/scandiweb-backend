@@ -19,4 +19,6 @@ require_once($rootPath.'/src/App/Database/config.php');
 //     $table->softDeletes();
 // });
 
-echo Capsule::schema();
+$capsule = new Capsule;
+
+var_dump($capsule);
