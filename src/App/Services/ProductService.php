@@ -25,7 +25,6 @@ class ProductService {
                 "data" => []
             ];
         }
-        $products = Product::all();
 
         return [
             "status" => "success",
