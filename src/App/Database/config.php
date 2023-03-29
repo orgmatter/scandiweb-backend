@@ -6,10 +6,11 @@ $capsule = new Capsule;
 
 $capsule->addConnection([
 "driver" => "mysql",
-"host" =>"us-cdbr-east-06.cleardb.net",
-"database" => "heroku_0e2c099e17f0ca9",
-"username" => "b9309572efa27f",
-"password" => "899e2f1a"
+"host" =>"q0h7yf5pynynaq54.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+"port" => 3306,
+"database" => "r7wf13h0s8or0zgs",
+"username" => "vlcwy23lkevovopm",
+"password" => "ts32e6337lojboh7"
 ]);
 
 $capsule->setAsGlobal();
