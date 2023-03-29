@@ -34,21 +34,30 @@ class ProductService {
 
     public function addProduct($data)
     {
-        var_dump($data);
-        if(!$product = Product::create($data)) {
-            
+        try {
+            $product = Product::create($data);
             return [
-                "status" => "error",
-                "msg" => "Product cannot be saved",
-                "data" => []
+                "status" => "success",
+                "msg" => "Product saved",
+                "data" => $product
             ];
+        }catch(\Exception $ex) {
+            echo "unable to create data {$ex->getMessage()}";
         }
+        // if(!$product = Product::create($data)) {
+            
+        //     return [
+        //         "status" => "error",
+        //         "msg" => "Product cannot be saved",
+        //         "data" => []
+        //     ];
+        // }
 
-        return [
-            "status" => "success",
-            "msg" => "Product saved",
-            "data" => $product
-        ];
+        // return [
+        //     "status" => "success",
+        //     "msg" => "Product saved",
+        //     "data" => $product
+        // ];
     }
 
     public function deleteProducts($data)
