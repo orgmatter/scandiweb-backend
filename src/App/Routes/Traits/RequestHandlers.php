@@ -16,11 +16,10 @@ trait RequestHandlers {
     { 
         try {
             // $products = $this->productService()->getProducts();
-            // $productService = new ProductService;
-            // return $productService->toJson([
-            //     "status" => "array to json"
-            // ]);
-            echo __DIR__;
+            $productService = new ProductService;
+            return $productService->toJson([
+                "status" => "array to json"
+            ]);
         
         }catch(Error $ex) {
             echo $ex->getMessage();

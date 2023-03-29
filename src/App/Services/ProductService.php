@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Database\Models\Product;
 
-require_once(__DIR__.'/src/App/Database/config.php');
+require_once('../Database/config.php');
 
 class ProductService {
 
