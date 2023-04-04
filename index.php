@@ -16,8 +16,6 @@ header("Content-Type: application/json; charset=UTF-8");
 
 $app = require './bootstrap.php';
 
-echo "hello world";
-
 // get my route object here
 $router = $app['router'];
 $load = $app["load"];
