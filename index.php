@@ -3,6 +3,7 @@
 use App\Routes\Request;
 
 require "vendor/autoload.php";
+echo "hello world";
 
 header('Access-Control-Allow-Origin: *');
 
