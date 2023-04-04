@@ -47,6 +47,8 @@ class Router {
 
         $requestTypeSmallCaps = strtolower($requestType);
 
+        echo $requestTypeSmallCaps;
+
         
         // get my request action in the request-action-finder array
         if(($requestTypeSmallCaps === "get") && isset($_GET['field']) && isset($_GET['value'])) {
