@@ -2,7 +2,7 @@
 
 namespace App\Routes\Traits;
 
-use App\Services\ProductService;
+// use App\Services\ProductService;
 
 trait RequestHandlers {
 
@@ -11,10 +11,10 @@ trait RequestHandlers {
     //     return new ProductService;
     // }
 
-    // public function shout()
-    // {
-    //     echo "shout";
-    // }
+    public function shout()
+    {
+        echo "shout";
+    }
 
 
 
