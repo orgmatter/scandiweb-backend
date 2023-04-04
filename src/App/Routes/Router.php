@@ -56,6 +56,8 @@ class Router {
             $field = $_GET['field'];
             $value = $_GET['value'];
 
+            echo $field;
+
             $this->product->$requestValidateAction($field, $value);
         
         }elseif($requestTypeSmallCaps === "get") {
