@@ -8,5 +8,5 @@ class Product
     {
         echo "product crazy";
     }
-    use App\Routes\Traits\RequestHandlers;
+    // use App\Routes\Traits\RequestHandlers;
 }
