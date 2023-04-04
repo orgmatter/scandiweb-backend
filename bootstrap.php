@@ -7,7 +7,7 @@ $routePath = "{$rootPath}/src/App/Routes/routes.php";
 
 
 $app = [
-    "router" => new Router(),
+    "router" => "new Router",
     // "load" => Router::load($routePath),
 ];
 
