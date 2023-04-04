@@ -13,7 +13,7 @@ try {
     //     // "load" => Router::load($routePath),
     // ];
     // return $app;
-    var_dump(new Router);
+    echo "hjhgjdgjdjhd";
 }catch(\Exception $ex) {
     echo "cannot load the router {$ex->getMessage()}";
 }
