@@ -20,5 +20,7 @@ $app = require './bootstrap.php';
 $router = $app['router'];
 $load = $app["load"];
 
+echo "hello world";
+
 // directing my route to fetch my controller
 $load->direct(Request::uri(), Request::method(), Request::data(), Request::isID());
