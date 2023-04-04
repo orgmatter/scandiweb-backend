@@ -68,7 +68,7 @@ class ProductService {
         }
     }
 
-    public function validate($field, $value)
+    public function validateRecord($field, $value)
     {
         $record = Product::where('sku', '=', $value)->get();
 

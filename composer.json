@@ -4,7 +4,9 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\Controllers\\" : "src/App/Controllers/",
+            "App\\Abstracts\\" : "src/App/Abstracts/",
+            "App\\Products\\" : "src/App/Products/",
+            "App\\Products\\ProductTypes" : "src/App/Products/ProductTypes",
             "App\\Database\\Migrations\\" : "src/App/Database/Migrations/",
             "App\\Database\\Models\\" : "src/App/Database/Models/",
             "App\\Routes\\" : "src/App/Routes/",

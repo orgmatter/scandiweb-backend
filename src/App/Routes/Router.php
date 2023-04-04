@@ -2,7 +2,7 @@
 
 namespace App\Routes;
 
-use App\Controllers\ProductController;
+use App\Products\Product;
 
 class Router {
 
@@ -19,7 +19,7 @@ class Router {
     public function __construct($route = null)
     {
 
-        $this->productController = new ProductController;
+        $this->product = new Product;
     }
 
     // function to load my route file here
@@ -56,13 +56,13 @@ class Router {
             $field = $_GET['field'];
             $value = $_GET['value'];
 
-            $this->productController->$requestValidateAction($field, $value);
+            $this->product->$requestValidateAction($field, $value);
         
         }elseif($requestTypeSmallCaps === "get") {
 
             $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
 
-            $this->productController->$requestAction();
+            $this->product->$requestAction();
         
         }elseif($requestTypeSmallCaps === "post") {
 
@@ -76,50 +76,46 @@ class Router {
 
             $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
 
-            $this->productController->$requestAction($postData);
+            $productType = new $requestData->productType;
+
+            $productType->$requestAction($postData);
 
         }elseif($requestTypeSmallCaps === "delete") {
 
             $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
 
-            $this->productController->$requestAction($requestData);
+            $this->product->$requestAction($requestData);
         }
         
     }
 
-    public function get($requestUri, $controller, $requestAction)
+    public function get($requestUri, $requestAction)
     {
-
-        $this->routes['GET'][$requestUri] = $controller;
         $this->routes['GET'][$requestAction] = $requestAction;
 
         $this->requestActionFinder["get-{$requestUri}"] = $requestAction;
     }
 
-    public function validate($requestUri, $controller, $requestAction)
+    public function post($requestUri, $requestAction)
     {
-
-        $this->routes['GET'][$requestUri] = $controller;
-        $this->routes['GET'][$requestAction] = $requestAction;
-
-        $this->requestActionFinder["get-validate-{$requestUri}"] = $requestAction;
-    }
-
-    public function post($requestUri, $controller, $requestAction)
-    {
-
-        $this->routes['POST'][$requestUri] = $controller;
         $this->routes['POST'][$requestAction] = $requestAction;
 
         $this->requestActionFinder["post-{$requestUri}"] = $requestAction;
     }
 
-    public function delete($requestUri, $controller, $requestAction)
+    public function delete($requestUri, $requestAction)
     {
-
-        $this->routes['DELETE'][$requestUri] = $controller;
+        $this->routes['DELETE'][$requestUri] = $requestUri;
         $this->routes['DELETE'][$requestAction] = $requestAction;
 
         $this->requestActionFinder["delete-{$requestUri}"] = $requestAction;
+    }
+
+    public function validateRecord($requestUri, $requestAction)
+    {
+        $this->routes['GET'][$requestUri] = $requestUri;
+        $this->routes['GET'][$requestAction] = $requestAction;
+
+        $this->requestActionFinder["get-validate-{$requestUri}"] = $requestAction;
     }
 }
