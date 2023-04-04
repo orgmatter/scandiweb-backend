@@ -6,10 +6,10 @@ use App\Services\ProductService;
 
 trait RequestHandlers {
 
-    public function productService() 
-    {
-        return new ProductService;
-    }
+    // public function productService() 
+    // {
+    //     return new ProductService;
+    // }
 
     public function shout()
     {
