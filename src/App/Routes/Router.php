@@ -8,7 +8,9 @@ class Router {
 
     public function __construct()
     {
-        new Product;
+        $this->product = new Product;
+
+        echo $this->product->shout();
     }
 
     // protected $product;
