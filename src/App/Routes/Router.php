@@ -6,7 +6,7 @@ use App\Products\Product;
 
 class Router {
 
-    protected $productController;
+    protected $product;
     
     protected $routes = [
         "GET" => [],
