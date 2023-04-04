@@ -12,7 +12,7 @@ try {
         "router" => "kugugug",
         // "load" => Router::load($routePath),
     ];
-    var_dump($app);
+    print_r($app);
 }catch(\Exception $ex) {
     echo "cannot load the router {$ex->getMessage()}";
 }
