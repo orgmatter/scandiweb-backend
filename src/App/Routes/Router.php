@@ -20,12 +20,13 @@ class Router {
     {
 
         $this->product = new Product;
+
+        var_dump($this->product);
     }
 
     // function to load my route file here
     public static function load($file)
     {
-        echo $file;
         $router = new static;
 
         require $file;
