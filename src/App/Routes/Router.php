@@ -18,7 +18,6 @@ class Router {
 
     public function __construct($route = null)
     {
-
         $this->product = new Product;
     }
 
