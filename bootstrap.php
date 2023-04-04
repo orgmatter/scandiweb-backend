@@ -8,12 +8,11 @@ $routePath = "{$rootPath}/src/App/Routes/routes.php";
 
 try {
 
-    // $app = [
-    //     "router" => new Router,
-    //     // "load" => Router::load($routePath),
-    // ];
-    // return $app;
-    echo "hjhgjdgjdjhd";
+    $app = [
+        "router" => "kugugug",
+        // "load" => Router::load($routePath),
+    ];
+    var_dump($app);
 }catch(\Exception $ex) {
     echo "cannot load the router {$ex->getMessage()}";
 }
