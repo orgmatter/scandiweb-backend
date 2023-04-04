@@ -6,7 +6,7 @@
         "psr-4": {
             "App\\Abstracts\\" : "src/App/Abstracts/",
             "App\\Products\\" : "src/App/Products/",
-            "App\\Products\\ProductTypes" : "src/App/Products/ProductTypes",
+            "App\\Products\\ProductTypes\\" : "src/App/Products/ProductTypes/",
             "App\\Database\\Migrations\\" : "src/App/Database/Migrations/",
             "App\\Database\\Models\\" : "src/App/Database/Models/",
             "App\\Routes\\" : "src/App/Routes/",
