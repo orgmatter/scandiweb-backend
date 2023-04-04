@@ -6,7 +6,10 @@ class Product
 {
     public function __construct()
     {
-        echo "product crazy";
+        echo $this->productService()->toJson([
+            "jjhjkh" => "jhjhk"
+        ]);
     }
-    // use App\Routes\Traits\RequestHandlers;
+
+    use App\Routes\Traits\RequestHandlers;
 }
