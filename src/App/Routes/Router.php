@@ -35,6 +35,7 @@ class Router {
 
     public function direct($requestUri, $requestType, $requestData, $id = null)
     {
+        echo $requestType;
 
         if($requestType === "OPTIONS") {
             return;
@@ -46,8 +47,6 @@ class Router {
         }
 
         $requestTypeSmallCaps = strtolower($requestType);
-
-        echo $requestTypeSmallCaps;
 
         
         // get my request action in the request-action-finder array
