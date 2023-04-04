@@ -10,7 +10,7 @@ try {
 
     $app = [
         "router" => new Router,
-        "load" => Router::load($routePath),
+        // "load" => Router::load($routePath),
     ];
     return $app;
 }catch(\Exception $ex) {
