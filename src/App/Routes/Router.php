@@ -10,7 +10,7 @@ class Router {
     {
         $this->product = new Product;
 
-        echo $this->product->shout();
+        $this->product->shout();
     }
 
     // protected $product;
