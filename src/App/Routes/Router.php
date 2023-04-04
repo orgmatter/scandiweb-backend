@@ -25,7 +25,6 @@ class Router {
     // function to load my route file here
     public static function load($file)
     {
-        echo $file;
         $router = new static;
 
         require $file;
