@@ -10,4 +10,6 @@ $app = [
     "load" => Router::load($routePath),
 ];
 
+echo $routePath;
+
 return $app;
