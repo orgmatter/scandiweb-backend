@@ -2,9 +2,12 @@
 
 use App\Routes\Router;
 
+$rootPath = $_SERVER["DOCUMENT_ROOT"];
+$routePath = "{$rootPath}/src/App/Routes/routes.php";
+
 $app = [
     "router" => new Router,
-    "load" => Router::load('./routes.php'),
+    "load" => Router::load($routePath),
 ];
 
 return $app;
