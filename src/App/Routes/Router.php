@@ -20,8 +20,6 @@ class Router {
     {
 
         $this->product = new Product;
-
-        var_dump($this->product);
     }
 
     // function to load my route file here
