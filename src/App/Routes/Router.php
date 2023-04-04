@@ -8,6 +8,6 @@ class Router {
 
     public function __construct()
     {
-        echo "crazy";
+        var_dump(new Product);
     }
 }
