@@ -64,8 +64,6 @@ class Router {
 
             $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
 
-            echo $requestAction;
-
             $this->product->$requestAction();
         
         }elseif($requestTypeSmallCaps === "post") {
@@ -95,6 +93,7 @@ class Router {
 
     public function get($requestUri, $requestAction)
     {
+        $this->routes['GET'][$requestUri] = $requestUri;
         $this->routes['GET'][$requestAction] = $requestAction;
 
         $this->requestActionFinder["get-{$requestUri}"] = $requestAction;
@@ -102,6 +101,7 @@ class Router {
 
     public function post($requestUri, $requestAction)
     {
+        $this->routes['POST'][$requestUri] = $requestUri;
         $this->routes['POST'][$requestAction] = $requestAction;
 
         $this->requestActionFinder["post-{$requestUri}"] = $requestAction;
