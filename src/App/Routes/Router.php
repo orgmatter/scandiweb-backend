@@ -55,8 +55,6 @@ class Router {
 
             $requestValidateAction = $this->requestActionFinder["{$requestTypeSmallCaps}-validate-{$requestUri}"];
 
-            echo $requestValidateAction;
-
             $field = $_GET['field'];
             $value = $_GET['value'];
 
