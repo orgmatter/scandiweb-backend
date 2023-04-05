@@ -17,11 +17,21 @@ class Router {
         'DELETE' => [],
     ];
 
+    protected $productTypes = [
+        "Book" => "",
+        "DVD" => "",
+        "Furniture" => "",
+    ];
+
     protected $requestActionFinder = [];
 
     public function __construct($route = null)
     {
         $this->product = new Product;
+
+        $this->productTypes["Book"] = new Book;
+        $this->productTypes["DVD"] = new DVD;
+        $this->productTypes["Furniture"] = new Furniture;
     }
 
     // function to load my route file here
@@ -78,7 +88,7 @@ class Router {
 
             $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
 
-            $productType = new $requestData->productType;
+            $productType = $this->productTypes[$requestData->productType];
 
             $productType->$requestAction($postData);
 
