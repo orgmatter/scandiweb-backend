@@ -3,6 +3,9 @@
 namespace App\Routes;
 
 use App\Products\Product;
+use App\Products\ProductTypes\Book;
+use App\Products\ProductTypes\DVD;
+use App\Products\ProductTypes\Furniture;
 
 class Router {
 
@@ -45,6 +48,8 @@ class Router {
         }
 
         $requestTypeSmallCaps = strtolower($requestType);
+
+        echo $requestTypeSmallCaps;
 
         
         // get my request action in the request-action-finder array
