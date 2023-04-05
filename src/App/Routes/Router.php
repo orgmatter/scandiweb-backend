@@ -12,7 +12,7 @@ class Router {
         try {
             $this->product = new Product;
             $this->product->shout();   
-        }catch(\Exception $ex) {
+        }catch(\Throwable $ex) {
             echo "cannot use traits {$ex->getMessage()}";
         }
     }
