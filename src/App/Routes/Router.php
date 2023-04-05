@@ -49,13 +49,13 @@ class Router {
 
         $requestTypeSmallCaps = strtolower($requestType);
 
-        echo $requestTypeSmallCaps;
-
         
         // get my request action in the request-action-finder array
         if(($requestTypeSmallCaps === "get") && isset($_GET['field']) && isset($_GET['value'])) {
 
             $requestValidateAction = $this->requestActionFinder["{$requestTypeSmallCaps}-validate-{$requestUri}"];
+
+            echo $requestValidateAction;
 
             $field = $_GET['field'];
             $value = $_GET['value'];
