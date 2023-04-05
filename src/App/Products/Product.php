@@ -27,7 +27,7 @@ class Product
 
     public function validateRecord($field, $value) 
     { 
-        $products = $this->productService()->validate($field, $value);
+        $products = $this->productService()->validateRecord($field, $value);
         var_dump($products);
         return $this->productService()->toJson($products);
     }   
