@@ -8,9 +8,9 @@ class Router {
 
     public function __construct()
     {
-        $this->product = new Product;
-
+        
         try {
+            $this->product = new Product;
             $this->product->shout();   
         }catch(\Exception $ex) {
             echo "cannot use traits {$ex->getMessage()}";
