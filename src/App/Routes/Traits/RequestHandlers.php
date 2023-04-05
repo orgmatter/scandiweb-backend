@@ -11,10 +11,10 @@ trait RequestHandlers {
     //     return new ProductService;
     // }
 
-    // public function shout()
-    // {
-    //     echo "shout";
-    // }
+    public function shout()
+    {
+        echo "shout";
+    }
 
 
 
