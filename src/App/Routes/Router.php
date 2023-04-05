@@ -6,128 +6,115 @@ use App\Products\Product;
 
 class Router {
 
-    public function __construct()
+    protected $product;
+    
+    protected $routes = [
+        "GET" => [],
+        "POST" => [],
+        'DELETE' => [],
+    ];
+
+    protected $requestActionFinder = [];
+
+    public function __construct($route = null)
     {
-        
-        try {
-            if(!$this->product = new Product) {
-                throw new Exception("cannot use traits");
-            }
-            $this->product->shout();   
-        }catch(\Throwable $ex) {
-            echo $ex->getMessage();
-        }
+        $this->product = new Product;
     }
 
-    // protected $product;
-    
-    // protected $routes = [
-    //     "GET" => [],
-    //     "POST" => [],
-    //     'DELETE' => [],
-    // ];
+    // function to load my route file here
+    public static function load($file)
+    {
+        $router = new static;
 
-    // protected $requestActionFinder = [];
+        require $file;
 
-    // public function __construct($route = null)
-    // {
-    //     $this->product = new Product;
-    // }
-
-    // // function to load my route file here
-    // public static function load($file)
-    // {
-    //     $router = new static;
-
-    //     require $file;
-
-    //     return $router;
-    // }
+        return $router;
+    }
 
 
-    // public function direct($requestUri, $requestType, $requestData, $id = null)
-    // {
+    public function direct($requestUri, $requestType, $requestData, $id = null)
+    {
 
-    //     if($requestType === "OPTIONS") {
-    //         return;
-    //     }
-    //     if(!array_key_exists($requestUri, $this->routes[$requestType])) {
+        if($requestType === "OPTIONS") {
+            return;
+        }
+        if(!array_key_exists($requestUri, $this->routes[$requestType])) {
 
-    //         throw new Exception("the request url {$requestUri} does not exit");
+            throw new Exception("the request url {$requestUri} does not exit");
 
-    //     }
+        }
 
-    //     $requestTypeSmallCaps = strtolower($requestType);
+        $requestTypeSmallCaps = strtolower($requestType);
 
         
-    //     // get my request action in the request-action-finder array
-    //     if(($requestTypeSmallCaps === "get") && isset($_GET['field']) && isset($_GET['value'])) {
+        // get my request action in the request-action-finder array
+        if(($requestTypeSmallCaps === "get") && isset($_GET['field']) && isset($_GET['value'])) {
 
-    //         $requestValidateAction = $this->requestActionFinder["{$requestTypeSmallCaps}-validate-{$requestUri}"];
+            $requestValidateAction = $this->requestActionFinder["{$requestTypeSmallCaps}-validate-{$requestUri}"];
 
-    //         $field = $_GET['field'];
-    //         $value = $_GET['value'];
+            $field = $_GET['field'];
+            $value = $_GET['value'];
 
-    //         $this->product->$requestValidateAction($field, $value);
+            $this->product->$requestValidateAction($field, $value);
         
-    //     }elseif($requestTypeSmallCaps === "get") {
+        }elseif($requestTypeSmallCaps === "get") {
 
-    //         $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
+            $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
 
-    //         $this->product->$requestAction();
+            $this->product->$requestAction();
         
-    //     }elseif($requestTypeSmallCaps === "post") {
+        }elseif($requestTypeSmallCaps === "post") {
 
-    //         $postData = [
-    //             "name" => ucwords($requestData->name),
-    //             "price" => $requestData->price,
-    //             "sku" => $requestData->sku,
-    //             "productType" => $requestData->productType,
-    //             "attributes" => $requestData->attributes
-    //         ];
+            $postData = [
+                "name" => ucwords($requestData->name),
+                "price" => $requestData->price,
+                "sku" => $requestData->sku,
+                "productType" => $requestData->productType,
+                "attributes" => $requestData->attributes
+            ];
 
-    //         $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
+            $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
 
-    //         $productType = new $requestData->productType;
+            $productType = new $requestData->productType;
 
-    //         $productType->$requestAction($postData);
+            $productType->$requestAction($postData);
 
-    //     }elseif($requestTypeSmallCaps === "delete") {
+        }elseif($requestTypeSmallCaps === "delete") {
 
-    //         $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
+            $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
 
-    //         $this->product->$requestAction($requestData);
-    //     }
+            $this->product->$requestAction($requestData);
+        }
         
-    // }
+    }
 
-    // public function get($requestUri, $requestAction)
-    // {
-    //     $this->routes['GET'][$requestAction] = $requestAction;
+    public function get($requestUri, $requestAction)
+    {
+        $this->routes['GET'][$requestAction] = $requestAction;
 
-    //     $this->requestActionFinder["get-{$requestUri}"] = $requestAction;
-    // }
+        $this->requestActionFinder["get-{$requestUri}"] = $requestAction;
+    }
 
-    // public function post($requestUri, $requestAction)
-    // {
-    //     $this->routes['POST'][$requestAction] = $requestAction;
+    public function post($requestUri, $requestAction)
+    {
+        $this->routes['POST'][$requestAction] = $requestAction;
 
-    //     $this->requestActionFinder["post-{$requestUri}"] = $requestAction;
-    // }
+        $this->requestActionFinder["post-{$requestUri}"] = $requestAction;
+    }
 
-    // public function delete($requestUri, $requestAction)
-    // {
-    //     $this->routes['DELETE'][$requestUri] = $requestUri;
-    //     $this->routes['DELETE'][$requestAction] = $requestAction;
+    public function delete($requestUri, $requestAction)
+    {
+        $this->routes['DELETE'][$requestUri] = $requestUri;
+        $this->routes['DELETE'][$requestAction] = $requestAction;
 
-    //     $this->requestActionFinder["delete-{$requestUri}"] = $requestAction;
-    // }
+        $this->requestActionFinder["delete-{$requestUri}"] = $requestAction;
+    }
 
-    // public function validateRecord($requestUri, $requestAction)
-    // {
-    //     $this->routes['GET'][$requestUri] = $requestUri;
-    //     $this->routes['GET'][$requestAction] = $requestAction;
+    public function validateRecord($requestUri, $requestAction)
+    {
+        $this->routes['GET'][$requestUri] = $requestUri;
+        $this->routes['GET'][$requestAction] = $requestAction;
 
-    //     $this->requestActionFinder["get-validate-{$requestUri}"] = $requestAction;
-    // }
+        $this->requestActionFinder["get-validate-{$requestUri}"] = $requestAction;
+    }
 }
