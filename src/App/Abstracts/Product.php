@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Abstracts;
+use App\Services\ProductService;
 
 abstract class Product {
 
-    public function __construct()
+    abstract public function addProduct($data);
+
+    public function productService()
     {
-
+        return new ProductService;
     }
-
-    abstract public function addProduct($data);    
 }

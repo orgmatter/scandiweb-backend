@@ -6,10 +6,13 @@ use App\Products\Product;
 use App\Products\ProductTypes\Book;
 use App\Products\ProductTypes\DVD;
 use App\Products\ProductTypes\Furniture;
+use App\Factory\ProductFactory;
 
 class Router {
 
     protected $product;
+
+    protected $productFactory;
     
     protected $routes = [
         "GET" => [],
@@ -17,21 +20,12 @@ class Router {
         'DELETE' => [],
     ];
 
-    protected $productTypes = [
-        "Book" => "",
-        "DVD" => "",
-        "Furniture" => "",
-    ];
-
     protected $requestActionFinder = [];
 
     public function __construct($route = null)
     {
         $this->product = new Product;
-
-        $this->productTypes["Book"] = new Book;
-        $this->productTypes["DVD"] = new DVD;
-        $this->productTypes["Furniture"] = new Furniture;
+        $this->productFactory = new ProductFactory;
     }
 
     // function to load my route file here
@@ -87,10 +81,12 @@ class Router {
             ];
 
             $requestAction = $this->requestActionFinder["{$requestTypeSmallCaps}-{$requestUri}"];
-
-            $productType = $this->productTypes[$requestData->productType];
-
-            $productType->$requestAction($postData);
+            try {
+                $productType = $this->productFactory->createProduct($requestData->productType);
+                $productType->$requestAction($postData);
+            }catch(\Exception $ex) {
+                return $ex->getMessage();
+            }
 
         }elseif($requestTypeSmallCaps === "delete") {
 

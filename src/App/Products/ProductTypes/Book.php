@@ -3,16 +3,9 @@
 namespace App\Products\ProductTypes;
 
 use App\Abstracts\Product;
-use App\Services\ProductService;
 
 class Book extends Product
 {
-    public function productService()
-    {
-        return new ProductService;
-    }
-
-    
     public function addProduct($data)
     {
         $product = $this->productService()->addProduct($data);
