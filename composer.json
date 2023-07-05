@@ -14,5 +14,9 @@
             "App\\Routes\\Traits\\" : "src/App/Routes/Traits/",
             "App\\Services\\" : "src/App/Services/"
         }
+    },
+    "config": {
+
+        "platform-check": false
     }
 }
