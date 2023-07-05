@@ -2,14 +2,10 @@
 
 namespace App\Products;
 
-use App\Services\ProductService;
+use App\Abstracts\Product as ProductAbstract;
 
-class Product
+class Product extends ProductAbstract
 {
-    public function productService() 
-    {
-        return new ProductService;
-    }
 
     public function getProducts() 
     { 
