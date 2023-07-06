@@ -2,7 +2,7 @@
 
 namespace App\Routes;
 
-use App\Products\ProductA;
+use App\Products\Product;
 use App\Products\ProductTypes\Book;
 use App\Products\ProductTypes\DVD;
 use App\Products\ProductTypes\Furniture;
