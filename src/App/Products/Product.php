@@ -5,7 +5,13 @@ namespace App\Products;
 use App\Abstracts\Product as ProductAbstract;
 use App\Services\ProductService;
 
-class Product
+class AnotherClass {
+    public function anotherFunc(){
+        echo "you dey mad";
+    }
+}
+
+class Product extends AnotherClass
 {
     public static function testProduct() {
         echo "product test";
