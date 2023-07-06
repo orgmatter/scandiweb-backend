@@ -5,16 +5,10 @@ namespace App\Products;
 use App\Abstracts\Product as ProductAbstract;
 use App\Services\ProductService;
 
-class AnotherClass {
-    public function anotherFunc(){
-        return "you dey mad";
-    }
-}
-
-class Product extends AnotherClass
+class Product extends ProductService
 {
     public static function testProduct() {
-        echo static::anotherFunc();
+        echo static::serviceFunc();
     }
 
     // public function getProducts() 
