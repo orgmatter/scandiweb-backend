@@ -26,6 +26,7 @@ class Router {
     {
         $this->product = new Product;
         $this->productFactory = new ProductFactory;
+        echo "jhjd";
     }
 
     // function to load my route file here
