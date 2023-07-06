@@ -31,7 +31,6 @@ class Router {
     // function to load my route file here
     public static function load($file)
     {
-        echo "your head again";
         $router = new static;
 
         require $file;
