@@ -7,6 +7,8 @@ use App\Database\Models\Product;
 $rootPath = $_SERVER['DOCUMENT_ROOT'];
 require_once($rootPath.'/src/App/Database/config.php');
 
+echo "services-kjgjfgjh";
+
 class ProductService {
 
     public function getProducts()

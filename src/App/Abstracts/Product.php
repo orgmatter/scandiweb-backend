@@ -3,8 +3,6 @@
 namespace App\Abstracts;
 use App\Services\ProductService;
 
-echo "non-hfgfs";
-
 abstract class Product {
 
     abstract public function addProduct($data);
