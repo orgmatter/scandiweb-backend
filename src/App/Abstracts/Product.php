@@ -2,7 +2,6 @@
 
 namespace App\Abstracts;
 use App\Services\ProductService;
-echo ";fhgmjn";
 
 abstract class Product {
 

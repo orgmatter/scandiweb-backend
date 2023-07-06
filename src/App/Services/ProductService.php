@@ -3,9 +3,9 @@
 namespace App\Services;
 
 use App\Database\Models\Product;
+echo "kljghdhf---hjvg";
 
 $rootPath = $_SERVER['DOCUMENT_ROOT'];
-echo "kljghdhf";
 require_once($rootPath.'/src/App/Database/config.php');
 
 class ProductService {
