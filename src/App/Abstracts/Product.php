@@ -17,4 +17,4 @@ abstract class Product {
     }
 }
 
-Product::say();
+// Product::say();
