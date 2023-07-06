@@ -2,6 +2,7 @@
 
 namespace App\Abstracts;
 use App\Services\ProductService;
+echo "kljghdhf---hjvg";
 
 abstract class Product {
 
@@ -9,7 +10,6 @@ abstract class Product {
 
     public function productService()
     {
-        echo "kljghdhf---hjvg";
         return new ProductService;
     }
 }
