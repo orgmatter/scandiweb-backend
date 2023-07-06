@@ -14,12 +14,13 @@ header('Access-Control-Max-Age: 1728000');
 
 header("Content-Type: application/json; charset=UTF-8");
 
+echo "your head";
+
 $app = require './bootstrap.php';
 
 // get my route object here
 $router = $app['router'];
 $load = $app["load"];
 
-echo var_dump($load);
 // directing my route to fetch my controller
 $load->direct(Request::uri(), Request::method(), Request::data(), Request::isID());
