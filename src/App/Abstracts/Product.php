@@ -7,8 +7,8 @@ abstract class Product {
 
     abstract public function addProduct($data);
 
-    public function productService()
-    {
-        return new ProductService;
-    }
+    // public function productService()
+    // {
+    //     return new ProductService;
+    // }
 }

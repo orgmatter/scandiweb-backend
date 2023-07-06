@@ -9,11 +9,6 @@ require_once($rootPath.'/src/App/Database/config.php');
 
 class ProductService {
 
-    public function __construct($var = null)
-    {
-        
-    }
-
     public function getProducts()
     {
         try {
