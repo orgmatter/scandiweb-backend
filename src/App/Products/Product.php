@@ -7,14 +7,14 @@ use App\Services\ProductService;
 
 class AnotherClass {
     public function anotherFunc(){
-        echo "you dey mad";
+        return "you dey mad";
     }
 }
 
 class Product extends AnotherClass
 {
     public static function testProduct() {
-        echo "product test";
+        echo static::anotherFunc();
     }
 
     // public function getProducts() 
