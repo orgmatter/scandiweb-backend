@@ -24,6 +24,7 @@ class Router {
 
     public function __construct($route = null)
     {
+        echo "first routes";
         $this->product = new Product;
         $this->productFactory = new ProductFactory;
     }
@@ -31,6 +32,7 @@ class Router {
     // function to load my route file here
     public static function load($file)
     {
+        echo "first load";
         $router = new static;
 
         require $file;
