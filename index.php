@@ -14,9 +14,9 @@ header('Access-Control-Max-Age: 1728000');
 
 header("Content-Type: application/json; charset=UTF-8");
 
-echo "your head";
-
 $app = require './bootstrap.php';
+
+echo var_dump($app);
 
 // get my route object here
 $router = $app['router'];
