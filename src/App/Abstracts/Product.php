@@ -9,6 +9,7 @@ abstract class Product {
 
     public function productService()
     {
+        echo "kljghdhf---hjvg";
         return new ProductService;
     }
 }
