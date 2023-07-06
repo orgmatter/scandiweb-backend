@@ -24,8 +24,7 @@ class Router {
 
     public function __construct($route = null)
     {
-        // $this->product = new Product;
-        echo "jhjd";
+        $this->product = new Product;
         $this->productFactory = new ProductFactory;
     }
 
