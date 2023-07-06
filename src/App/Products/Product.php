@@ -2,7 +2,7 @@
 
 namespace App\Products;
 
-// use App\Abstracts\Product as ProductAbstract;
+use App\Abstracts\Product as ProductAbstract;
 
 class Product
 {
