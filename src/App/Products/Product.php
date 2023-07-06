@@ -2,9 +2,9 @@
 
 namespace App\Products;
 
-use App\Abstracts\Product as ProductAbstract;
+// use App\Abstracts\Product as ProductAbstract;
 
-class Product extends ProductAbstract
+class Product
 {
     public static function testProduct() {
         echo "product test";
