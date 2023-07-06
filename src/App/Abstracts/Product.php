@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Abstracts;
-use App\Services\ProductService;
+// use App\Services\ProductService;
 
 abstract class Product {
 
