@@ -4,7 +4,7 @@ namespace App\Products;
 
 use App\Abstracts\Product as ProductAbstract;
 
-class Product
+class Product extends ProductAbstract
 {
     public static function testProduct() {
         echo "product test";
