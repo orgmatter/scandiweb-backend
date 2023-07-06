@@ -5,7 +5,8 @@ namespace App\Services;
 use App\Database\Models\Product;
 
 $rootPath = $_SERVER['DOCUMENT_ROOT'];
-require_once($rootPath.'/src/App/Database/config.php');
+// require_once($rootPath.'/src/App/Database/config.php');
+echo $rootPath;
 
 class ProductService {
 
