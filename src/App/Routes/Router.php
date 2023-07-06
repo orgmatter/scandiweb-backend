@@ -2,7 +2,7 @@
 
 namespace App\Routes;
 
-use App\Products\Product;
+use App\Products\ProductA;
 use App\Products\ProductTypes\Book;
 use App\Products\ProductTypes\DVD;
 use App\Products\ProductTypes\Furniture;
@@ -25,7 +25,7 @@ class Router {
     public function __construct($route = null)
     {
         // $this->product = new Product;
-        Product::testProduct();
+        ProductA::testProduct();
         $this->productFactory = new ProductFactory;
     }
 
