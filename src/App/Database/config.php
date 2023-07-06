@@ -2,9 +2,7 @@
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-// $capsule = new Capsule;
-
-echo var_dump(["jgjg" => "lkbhj"]);
+$capsule = new Capsule;
 
 $capsule->addConnection([
 "driver" => "mysql",
