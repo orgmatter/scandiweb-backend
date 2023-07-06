@@ -11,4 +11,6 @@ $app = [
     "load" => Router::load($routePath),
 ];
 
+echo "your head again";
+
 return $app;
