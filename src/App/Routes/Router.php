@@ -25,8 +25,8 @@ class Router {
     public function __construct($route = null)
     {
         $this->product = new Product;
-        $this->productFactory = new ProductFactory;
         echo "first echo";
+        $this->productFactory = new ProductFactory;
     }
 
     // function to load my route file here
