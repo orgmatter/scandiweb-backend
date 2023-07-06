@@ -24,8 +24,8 @@ class Router {
 
     public function __construct($route = null)
     {
-        $this->product = new Product;
-        echo "first echo";
+        // $this->product = new Product;
+        Product::testProduct();
         $this->productFactory = new ProductFactory;
     }
 
