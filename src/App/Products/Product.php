@@ -4,8 +4,6 @@ namespace App\Products;
 
 use App\Abstracts\Product as ProductAbstract;
 
-echo "hjghjkff";
-
 class Product extends ProductAbstract
 {
     public function addProduct($data) {
@@ -15,8 +13,6 @@ class Product extends ProductAbstract
     { 
         $products = $this->productService()->getProducts();
         return $this->productService()->toJson($products);
-
-        // return $this->sayWhat();
     }
 
 

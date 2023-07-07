@@ -7,14 +7,8 @@ abstract class Product {
 
     abstract public function addProduct($data);
 
-    public function sayWhat(){
-        echo "say what";
-    }
-
     public function productService()
     {
         return new ProductService;
     }
 }
-
-// Product::say();

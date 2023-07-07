@@ -4,8 +4,6 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
 
-// echo var_dump(["jbvbs" => "kjgsg"]);
-
 $capsule->addConnection([
 "driver" => "mysql",
 "host" =>"localhost",
