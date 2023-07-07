@@ -13,10 +13,10 @@ class Product extends ProductAbstract
     }
     public function getProducts() 
     { 
-        // $products = $this->productService()->getProducts();
-        // return $this->productService()->toJson($products);
+        $products = $this->productService()->getProducts();
+        return $this->productService()->toJson($products);
 
-        return $this->sayWhat();
+        // return $this->sayWhat();
     }
 
 

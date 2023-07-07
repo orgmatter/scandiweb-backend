@@ -11,10 +11,10 @@ abstract class Product {
         echo "say what";
     }
 
-    // public function productService()
-    // {
-    //     return new ProductService;
-    // }
+    public function productService()
+    {
+        return new ProductService;
+    }
 }
 
 // Product::say();
