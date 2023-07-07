@@ -51,7 +51,6 @@ class Router {
             throw new Exception("the request url {$requestUri} does not exit");
 
         }
-        echo "request uri is: {$requestUri}";
 
         $requestTypeSmallCaps = strtolower($requestType);
 
