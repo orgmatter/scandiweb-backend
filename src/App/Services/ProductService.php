@@ -4,8 +4,6 @@ namespace App\Services;
 
 use App\Database\Models\Product;
 
-echo "ghdnghjhjh";
-
 $rootPath = $_SERVER['DOCUMENT_ROOT'];
 require_once($rootPath.'/src/App/Database/config.php');
 
