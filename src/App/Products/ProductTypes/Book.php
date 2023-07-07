@@ -2,7 +2,7 @@
 
 namespace App\Products\ProductTypes;
 
-use App\Abstracts\Product;
+use App\Products\Product;
 
 class Book extends Product
 {
