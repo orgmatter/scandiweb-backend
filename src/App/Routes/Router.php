@@ -42,17 +42,16 @@ class Router {
 
     public function direct($requestUri, $requestType, $requestData, $id = null)
     {
-        // echo $requestType;
 
         if($requestType === "OPTIONS") {
             return;
         }
         if(!array_key_exists($requestUri, $this->routes[$requestType])) {
 
-            // throw new Exception("the request url {$requestUri} does not exit");
-            echo "request uri is: {$requestUri}";
+            throw new Exception("the request url {$requestUri} does not exit");
 
         }
+        echo "request uri is: {$requestUri}";
 
         $requestTypeSmallCaps = strtolower($requestType);
 
