@@ -6,9 +6,9 @@ use App\Abstracts\Product as ProductAbstract;
 
 class Product extends ProductAbstract
 {
-    public function addProduct($data) {
-        return;
-    }
+    // public function addProduct($data) {
+    //     return;
+    // }
     public function getProducts() 
     { 
         $products = $this->productService()->getProducts();
