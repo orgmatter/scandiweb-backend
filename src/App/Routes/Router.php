@@ -25,7 +25,7 @@ class Router {
     public function __construct($route = null)
     {
         $this->product = new Product;
-        $this->product->getProducts();
+        // $this->product->getProducts();
         $this->productFactory = new ProductFactory;
     }
 
@@ -42,6 +42,7 @@ class Router {
 
     public function direct($requestUri, $requestType, $requestData, $id = null)
     {
+        echo $requestType;
 
         if($requestType === "OPTIONS") {
             return;
