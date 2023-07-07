@@ -4,6 +4,8 @@ namespace App\Products;
 
 use App\Abstracts\Product as ProductAbstract;
 
+echo "hjghjkff";
+
 class Product extends ProductAbstract
 {
     public function addProduct($data) {
